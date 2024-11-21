@@ -4,10 +4,10 @@ import os
 import PyPDF2
 import re
 import json
-
-# Function to convert PDF to text and append to vault.txt
+import get_cloud_docs
+# Function to convert PDF to text and append to rag_data.txt
 def convert_pdf_to_text():
-    file_path = "./test.pdf" #filedialog.askopenfilename(filetypes=[("PDF Files", "*.pdf")])
+    file_path = get_cloud_docs.get_cloud_docs("___pdf____url") #filedialog.askopenfilename(filetypes=[("PDF Files", "*.pdf")])
     if file_path:
         with open(file_path, 'rb') as pdf_file:
             pdf_reader = PyPDF2.PdfReader(pdf_file)
@@ -35,13 +35,13 @@ def convert_pdf_to_text():
                     current_chunk = sentence + " "
             if current_chunk:  # Don't forget the last chunk!
                 chunks.append(current_chunk)
-            with open("vault.txt", "a", encoding="utf-8") as vault_file:
+            with open("rag_data.txt", "a", encoding="utf-8") as vault_file:
                 for chunk in chunks:
                     # Write each chunk to its own line
                     vault_file.write(chunk.strip() + "\n")  # Two newlines to separate chunks
-            print(f"PDF content appended to vault.txt with each chunk on a separate line.")
+            print(f"PDF content appended to rag_data.txt with each chunk on a separate line.")
 
-# Function to upload a text file and append to vault.txt
+# Function to upload a text file and append to rag_data.txt
 def upload_txtfile():
     file_path = "./test.pdf" #filedialog.askopenfilename(filetypes=[("Text Files", "*.txt")])
     if file_path:
@@ -65,13 +65,13 @@ def upload_txtfile():
                     current_chunk = sentence + " "
             if current_chunk:  # Don't forget the last chunk!
                 chunks.append(current_chunk)
-            with open("vault.txt", "a", encoding="utf-8") as vault_file:
+            with open("rag_data.txt", "a", encoding="utf-8") as vault_file:
                 for chunk in chunks:
                     # Write each chunk to its own line
                     vault_file.write(chunk.strip() + "\n")  # Two newlines to separate chunks
-            print(f"Text file content appended to vault.txt with each chunk on a separate line.")
+            print(f"Text file content appended to rag_data.txt with each chunk on a separate line.")
 
-# Function to upload a JSON file and append to vault.txt
+# Function to upload a JSON file and append to rag_data.txt
 def upload_jsonfile():
     file_path = "test.json" #filedialog.askopenfilename(filetypes=[("JSON Files", "*.json")])
     if file_path:
@@ -98,11 +98,11 @@ def upload_jsonfile():
                     current_chunk = sentence + " "
             if current_chunk:  # Don't forget the last chunk!
                 chunks.append(current_chunk)
-            with open("vault.txt", "a", encoding="utf-8") as vault_file:
+            with open("rag_data.txt", "a", encoding="utf-8") as vault_file:
                 for chunk in chunks:
                     # Write each chunk to its own line
                     vault_file.write(chunk.strip() + "\n")  # Two newlines to separate chunks
-            print(f"JSON file content appended to vault.txt with each chunk on a separate line.")
+            print(f"JSON file content appended to rag_data.txt with each chunk on a separate line.")
 
 # # Create the main window
 # root = tk.Tk()
