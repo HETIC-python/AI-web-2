@@ -1,4 +1,4 @@
-vault_file: "vault.txt"
+vault_file: "rag_data.txt"
 embeddings_file: "vault_embeddings.json"
 ollama_model: "llama3"
 top_k: 7

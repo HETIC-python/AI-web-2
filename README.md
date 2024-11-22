@@ -12,11 +12,11 @@
     - source venv/bin/activate
     - pip install -r requirements.tx
     - python main.py 
-    - python rag.py --model llama3.2
+    - python rag.py --model model | python rag.py --model ollama3.2 par exemple
 
 ## Customization
 
-[inside ./main.py](./main.py) you can cange the `FILE_URL` variable to a file of your choice.
+[inside ./main.py](./main.py) you can change the `FILE_URL` variable to a file of your choice.
 
 ## QUESTIONS
 
