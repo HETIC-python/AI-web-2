@@ -1,7 +1,8 @@
 import upload
+from get_cloud_docs import get_cloud_docs
 
 def main(url):
-    file_name = upload.get_cloud_docs.get_cloud_docs(url)
+    file_name = get_cloud_docs(url)
 
     if file_name.endswith(".txt"):
         upload.upload_txtfile(file_name)

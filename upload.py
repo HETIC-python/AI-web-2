@@ -2,7 +2,6 @@ import os
 import PyPDF2
 import re
 import json
-import get_cloud_docs
 
 def convert_pdf_to_text(file_name):
     file_path = file_name
