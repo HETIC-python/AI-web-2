@@ -1,5 +1,23 @@
 # AI ML PROJECT
 
+## Requirements
+
+    - python3.11
+    - ollama (model llama3.2)
+
+## Steps to reproduce in an unix environment
+
+    - git clone <INSERT LINK>
+    - python3.11 -m venv ven
+    - source venv/bin/activate
+    - pip install -r requirements.tx
+    - python main.py 
+    - python rag.py --model llama3.2
+
+## Customization
+
+[inside ./main.py](./main.py) you can cange the `FILE_URL` variable to a file of your choice.
+
 ## QUESTIONS
 
 - compare le pib par habitant entre la france et la chine
