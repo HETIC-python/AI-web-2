@@ -10,6 +10,7 @@ CYAN = '\033[96m'
 YELLOW = '\033[93m'
 NEON_GREEN = '\033[92m'
 RESET_COLOR = '\033[0m'
+TEMPERATURE = 2
 
 # Function to open a file and return its contents as a string
 def open_file(filepath):
@@ -60,7 +61,8 @@ def ollama_chat(user_input, system_message, vault_embeddings, vault_content, oll
     # Send the completion request to the Ollama model
     response = client.chat.completions.create(
         model=ollama_model,
-        messages=messages
+        messages=messages,
+        temperature=TEMPERATURE,
     )
     
     # Append the model's response to the conversation history
