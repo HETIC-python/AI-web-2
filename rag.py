@@ -12,6 +12,12 @@ NEON_GREEN = '\033[92m'
 RESET_COLOR = '\033[0m'
 TEMPERATURE = 2
 
+
+# Parse command-line arguments
+parser = argparse.ArgumentParser(description="Ollama Chat")
+parser.add_argument("--model", default="llama3", help="Ollama model to use (default: llama3)")
+args = parser.parse_args()
+
 # Function to open a file and return its contents as a string
 def open_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as infile:
@@ -22,7 +28,7 @@ def get_relevant_context(rewritten_input, vault_embeddings, vault_content, top_k
     if vault_embeddings.nelement() == 0:  # Check if the tensor has any elements
         return []
     # Encode the rewritten input
-    input_embedding = ollama.embeddings(model='llama3.2', prompt=rewritten_input)["embedding"]
+    input_embedding = ollama.embeddings(model=args.model, prompt=rewritten_input)["embedding"]
     # Compute cosine similarity between the input and vault embeddings
     cos_scores = torch.cosine_similarity(torch.tensor(input_embedding).unsqueeze(0), vault_embeddings)
     # Adjust top_k if it's greater than the number of available scores
@@ -71,15 +77,10 @@ def ollama_chat(user_input, system_message, vault_embeddings, vault_content, oll
     # Return the content of the response from the model
     return response.choices[0].message.content
 
-# Parse command-line arguments
-parser = argparse.ArgumentParser(description="Ollama Chat")
-parser.add_argument("--model", default="dolphin-llama3", help="Ollama model to use (default: llama3)")
-args = parser.parse_args()
-
 # Configuration for the Ollama API client
 client = OpenAI(
     base_url='http://localhost:11434/v1',
-    api_key='dolphin-llama3'
+    api_key=args.model
 )
 
 # Load the vault content
@@ -91,7 +92,7 @@ if os.path.exists("rag_data.txt"):
 # Generate embeddings for the vault content using Ollama
 vault_embeddings = []
 for content in vault_content:
-    response = ollama.embeddings(model='llama3.2', prompt=content)
+    response = ollama.embeddings(model=args.model, prompt=content)
     vault_embeddings.append(response["embedding"])
 
 # Convert to tensor and print embeddings

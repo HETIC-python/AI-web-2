@@ -12,22 +12,13 @@
     - source venv/bin/activate
     - pip install -r requirements.tx
     - python main.py 
-    - python rag.py --model llama3.2
+    - python rag.py --model model | python rag.py --model ollama3.2 par exemple
 
 ## Customization
 
 ### FILE URL
 
-[inside ./main.py](./main.py) you can cange the `FILE_URL` variable to a file of your choice.
-
-### Temperature Control
-
-The temperature parameter adjusts the balance between precision and creativity in responses:
-
-* Low temperature (e.g., 0.2): Precise and coherent answers (ideal for factual tasks).
-* High temperature (e.g., 0.8): More varied and creative responses.
-
-You can change the value of `TEMPERATURE` in [./rag.py](./rag.py)
+[inside ./main.py](./main.py) you can change the `FILE_URL` variable to a file of your choice.
 
 ## QUESTIONS
 
