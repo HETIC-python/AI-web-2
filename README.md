@@ -16,13 +16,24 @@
 
 ## Customization
 
+### FILE URL
+
 [inside ./main.py](./main.py) you can cange the `FILE_URL` variable to a file of your choice.
+
+### Temperature Control
+
+The temperature parameter adjusts the balance between precision and creativity in responses:
+
+* Low temperature (e.g., 0.2): Precise and coherent answers (ideal for factual tasks).
+* High temperature (e.g., 0.8): More varied and creative responses.
+
+You can change the value of `TEMPERATURE` in [./rag.py](./rag.py)
 
 ## QUESTIONS
 
-- compare le pib par habitant entre la france et la chine
+* compare le pib par habitant entre la france et la chine
 
-  - **avec le texte:**
+  * **avec le texte:**
 
     ```txt
     Voici les informations Extraction les plus utiles concernant le comparison entre la France et la Chine :
@@ -36,7 +47,7 @@
     * En Chine, si  le PIB par habitant en Asie de l'est et Pacifique a doublé, la croissance en ASIE du Sud a marché à 146%
     ```
 
-  - **sans le texte:**
+  * **sans le texte:**
 
     ```txt
         Bonjour !
@@ -60,14 +71,14 @@
         Ce niveau élevé est attribué à la capacité économique du pays, principalement due aux industries telles que la production automobile, électonique, aérienne, navale.
     ```
 
-- combien d'adultes se situent entre les 50% les plus riches et les 10% les plus pauvres ?
-  - **avec le texte**
+* combien d'adultes se situent entre les 50% les plus riches et les 10% les plus pauvres ?
+  * **avec le texte**
 
     ```txt
         Les deux milliards d'adultes qui se situent entre les 50 % des pauvres et les 10 % des plus riches, gagnent à leur tour moins de 2 millions d'euros.
     ```
 
-  - **sans le texte**:
+  * **sans le texte**:
 
     ```txt
     Bonjour !
@@ -86,14 +97,14 @@
     En utilisant une formule plus élaborée, on peut déterminer que les personnes intéressées sont ceux qui n'ont pas les moyens de s'offrir deux voitures, un séjour en mer mediterranéen et d'autres luxes.
     ```
 
-- En Asie de l’Est et Pacifique', combien de personnes vivent avec moins de 1.90 dollars par jou
-  - **Avec le texte:**
+* En Asie de l’Est et Pacifique', combien de personnes vivent avec moins de 1.90 dollars par jou
+  * **Avec le texte:**
 
     ```txt
     Les deux milliards d'adultes qui se situent entre les 50 % des pauvres et les 10 % des plus riches, gagnent à leur tour moins de 2 millions d'euros.
     ```
 
-  - **Sans le texte:**
+  * **Sans le texte:**
 
     ```txt
         Bonjour !
@@ -115,16 +126,16 @@
         Ces chiffres évoluent en raison des facteurs économiques. Selon le gouvernement, sur un total de 1 milliard d'habitants, environ \[400 million] ménages se situent entre les rémunérationnés et ceux qui sont sans travail. Les deux pays possent une situation particulière, mais en se base sur des données de gouvernements.
     ```
 
-- le pib par hbitant est combien de fois supérieur à celui de la chine ?
+* le pib par hbitant est combien de fois supérieur à celui de la chine ?
 
-  - **Avec le texte:**
+  * **Avec le texte:**
 
     ```txt
 
     Selon le texte, Le PIB par habitant en France est trois fois supérieur à celui de la Chine, ce qui correspond à 3 x 16900 dollars
     ```
 
-  - **Sans le txte:**
+  * **Sans le txte:**
 
     ```txt
     Le PIB par habitant à France
@@ -136,19 +147,3 @@
     *   Le 30/06/2023 était de 10.390 $.
 
 
-**🔥 Temperature Control**
-
-The temperature parameter adjusts the balance between precision and creativity in responses:
-
-* Low temperature (e.g., 0.2): Precise and coherent answers (ideal for factual tasks).
-* High temperature (e.g., 0.8): More varied and creative responses.
-
-You can set the value via:
-
-bash
-Copier le code
-   ``` *  python run_rag.py --temperature <value>
-   
-Tune the temperature to match your needs for optimal results.
-
- 
