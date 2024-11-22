@@ -1,9 +1,15 @@
 # AI ML PROJECT
 
+## GROUPE
+    - Jiad ABDUL
+    - Faithgot Glin-Dayi
+    - Ahmat Rouchad
+
 ## Requirements
 
     - python3.11
     - ollama (model llama3.2)
+
 
 ## Steps to reproduce in an unix environment
 
