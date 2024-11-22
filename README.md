@@ -136,16 +136,18 @@
     *   Le 30/06/2023 était de 10.390 $.
 
 
- 🔥 Temperature Control
+**🔥 Temperature Control**
+
 The temperature parameter adjusts the balance between precision and creativity in responses:
 
-Low temperature (e.g., 0.2): Precise and coherent answers (ideal for factual tasks).
-High temperature (e.g., 0.8): More varied and creative responses.
+* Low temperature (e.g., 0.2): Precise and coherent answers (ideal for factual tasks).
+* High temperature (e.g., 0.8): More varied and creative responses.
+
 You can set the value via:
 
 bash
 Copier le code
-python run_rag.py --temperature <value>
+   ``` python run_rag.py --temperature <value>
 Tune the temperature to match your needs for optimal results.
 
-    ```
+ 
