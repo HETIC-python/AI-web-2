@@ -123,8 +123,8 @@ client = OpenAI(
 # Load the vault content
 print(NEON_GREEN + "Loading vault content..." + RESET_COLOR)
 vault_content = []
-if os.path.exists("vault.txt"):
-    with open("vault.txt", "r", encoding='utf-8') as vault_file:
+if os.path.exists("rag_data.txt"):
+    with open("rag_data.txt", "r", encoding='utf-8') as vault_file:
         vault_content = vault_file.readlines()
 
 # Generate embeddings for the vault content using Ollama
