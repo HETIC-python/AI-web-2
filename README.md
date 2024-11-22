@@ -147,7 +147,8 @@ You can set the value via:
 
 bash
 Copier le code
-   ``` python run_rag.py --temperature <value>
+   ``` *  python run_rag.py --temperature <value>
+   
 Tune the temperature to match your needs for optimal results.
 
  
