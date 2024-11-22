@@ -24,8 +24,8 @@
 
 ### FILE URL
 
-[inside ./main.py](./main.py) you can change the `FILE_URL` variable to a file of your choice.
-
+- [inside ./main.py](./main.py) you can change the `FILE_URL` variable to a file of your choice.
+- You can change the value of `TEMPERATURE` in [./rag.py](./rag.py)
 ## QUESTIONS
 
 * compare le pib par habitant entre la france et la chine
